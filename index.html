@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thirth Patel · AI & Robotics · Developer</title>
+<meta name="description" content="Thirth Patel — ISE (AI & Robotics) at Presidency University, Bengaluru. Applied AI, LLM + RAG systems, computer vision and full-stack projects." />
+<meta property="og:title" content="Thirth Patel · AI & Robotics · Developer" />
+<meta property="og:description" content="Applied AI, LLM + RAG systems, computer vision and full-stack projects." />
+<meta name="theme-color" content="#05060f" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧊</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #05060f; --panel: #0d1117; --line: #242b3d; --text: #e6edf3; --muted: #8b949e;
+    --blue: #58a6ff; --purple: #bc8cff; --pink: #ff7eb6; --green: #3fb950; --orange: #ffa657;
+    --mono: 'JetBrains Mono', Consolas, monospace; --sans: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); overflow-x: hidden; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--purple); color: #000; }
+
+  /* cursor glow */
+  #glow { position: fixed; width: 420px; height: 420px; border-radius: 50%; pointer-events: none; z-index: 0;
+          background: radial-gradient(circle, rgba(188,140,255,.13), transparent 65%); transform: translate(-50%,-50%);
+          transition: opacity .3s; left: -999px; top: -999px; }
+
+  /* nav */
+  nav { position: fixed; top: 18px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; gap: 6px;
+        padding: 6px; border: 1px solid var(--line); border-radius: 999px; background: rgba(13,17,23,.55); backdrop-filter: blur(14px); }
+  nav a { font-family: var(--mono); font-size: 13px; padding: 8px 14px; border-radius: 999px; color: var(--muted); transition: .2s; }
+  nav a:hover { color: var(--text); background: rgba(88,166,255,.12); }
+
+  /* hero */
+  #hero { position: relative; height: 100vh; min-height: 620px; display: grid; place-items: center; overflow: hidden; }
+  #scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-inner { position: relative; z-index: 2; text-align: center; padding: 0 20px; pointer-events: none; }
+  .hello { font-family: var(--mono); letter-spacing: .35em; font-size: 13px; color: var(--muted); }
+  h1 { font-size: clamp(52px, 10vw, 128px); line-height: 1; font-weight: 700; margin: 14px 0 18px;
+       background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink), var(--blue)); background-size: 300% 100%;
+       -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 8s linear infinite;
+       filter: drop-shadow(0 0 30px rgba(188,140,255,.35)); }
+  @keyframes shimmer { to { background-position: 300% 0; } }
+  .role { font-family: var(--mono); font-size: clamp(15px, 2.2vw, 20px); color: #c9d1d9; min-height: 1.6em; }
+  .role .caret { display: inline-block; width: 10px; height: 1.1em; background: var(--blue); vertical-align: -3px; margin-left: 3px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .where { margin-top: 26px; display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .pill { font-family: var(--mono); font-size: 12.5px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,17,23,.6); color: var(--muted); }
+  .cta { margin-top: 34px; display: flex; gap: 14px; justify-content: center; pointer-events: auto; flex-wrap: wrap; }
+  .btn { font-family: var(--mono); font-size: 14px; padding: 13px 22px; border-radius: 12px; border: 1px solid var(--line); transition: .25s; }
+  .btn.primary { background: linear-gradient(90deg, var(--blue), var(--purple)); color: #05060f; font-weight: 600; border: 0; box-shadow: 0 10px 40px -10px rgba(188,140,255,.6); }
+  .btn:hover { transform: translateY(-3px); box-shadow: 0 16px 50px -12px rgba(88,166,255,.55); }
+  .scroll { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 2; font-family: var(--mono); font-size: 12px; color: var(--muted); animation: bob 2s ease-in-out infinite; }
+  @keyframes bob { 50% { transform: translate(-50%, 8px); } }
+
+  /* sections */
+  section { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 110px 24px; }
+  .eyebrow { font-family: var(--mono); font-size: 13px; color: var(--green); letter-spacing: .15em; }
+  h2 { font-size: clamp(32px, 5vw, 52px); margin: 8px 0 34px; }
+  .reveal { opacity: 0; transform: translateY(30px); transition: 1s cubic-bezier(.2,.8,.2,1); }
+  .reveal.on { opacity: 1; transform: none; }
+
+  /* about */
+  .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: start; }
+  .about p { color: #c9d1d9; font-size: 18px; margin-bottom: 16px; }
+  .term { font-family: var(--mono); font-size: 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(0,0,0,.8); }
+  .term .bar { display: flex; gap: 7px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .term .bar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+  .term pre { padding: 18px; white-space: pre-wrap; color: #c9d1d9; line-height: 1.75; }
+  .k { color: var(--pink); } .s { color: #a5d6ff; } .c { color: var(--muted); } .g { color: var(--green); }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 10px; }
+  .stat { border: 1px solid var(--line); border-radius: 18px; padding: 22px; background: linear-gradient(160deg, rgba(88,166,255,.06), rgba(188,140,255,.04)); }
+  .stat b { font-size: 40px; display: block; line-height: 1.1; }
+  .stat span { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+  /* projects */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; perspective: 1200px; }
+  .card { --mx: 50%; --my: 50%; --c: var(--blue); position: relative; border-radius: 20px; padding: 26px; min-height: 280px;
+          background: var(--panel); border: 1px solid var(--line); transform-style: preserve-3d; transition: transform .15s ease-out, border-color .3s;
+          display: flex; flex-direction: column; overflow: hidden; }
+  .card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s;
+                  background: radial-gradient(420px circle at var(--mx) var(--my), color-mix(in srgb, var(--c) 22%, transparent), transparent 45%); }
+  .card:hover::before { opacity: 1; }
+  .card:hover { border-color: color-mix(in srgb, var(--c) 60%, transparent); }
+  .card > * { transform: translateZ(40px); }
+  .card .emoji { font-size: 34px; }
+  .card h3 { font-size: 23px; margin: 12px 0 2px; }
+  .card .tag { font-family: var(--mono); font-size: 12px; color: var(--c); }
+  .card p { color: #b3bdc8; font-size: 15px; margin: 14px 0 18px; flex: 1; }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip { font-family: var(--mono); font-size: 11.5px; padding: 4px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); color: var(--c); background: color-mix(in srgb, var(--c) 10%, transparent); }
+  .card .go { position: absolute; top: 24px; right: 22px; font-family: var(--mono); font-size: 13px; color: var(--muted); transition: .3s; }
+  .card:hover .go { color: var(--c); transform: translateZ(40px) translate(4px,-4px); }
+
+  /* marquee */
+  .marquee { overflow: hidden; border-block: 1px solid var(--line); padding: 20px 0; mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .track { display: flex; gap: 46px; width: max-content; animation: scroll 32s linear infinite; font-family: var(--mono); font-size: 18px; color: var(--muted); }
+  .track span:nth-child(3n) { color: var(--blue); } .track span:nth-child(3n+1) { color: var(--purple); }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* contact */
+  .contact { text-align: center; }
+  .contact h2 { font-size: clamp(40px, 7vw, 84px); }
+  .links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  footer { text-align: center; padding: 40px 20px 60px; font-family: var(--mono); font-size: 12px; color: var(--muted); position: relative; z-index: 1; }
+
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } .about { grid-template-columns: 1fr; } .stats { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .role { min-height: 3.3em; } .grid { grid-template-columns: 1fr; } nav a { padding: 7px 10px; font-size: 12px; } section { padding: 80px 18px; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+<div id="glow"></div>
+
+<nav>
+  <a href="#hero">~/home</a><a href="#about">about</a><a href="#work">work</a><a href="#contact">contact</a>
+</nav>
+
+<header id="hero">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <div class="hello">HELLO, WORLD — I'M</div>
+    <h1>Thirth Patel</h1>
+    <div class="role"><span id="role"></span><span class="caret"></span></div>
+    <div class="where">
+      <span class="pill">🤖 ISE · AI &amp; Robotics</span>
+      <span class="pill">🎓 Presidency University</span>
+      <span class="pill">📍 Bengaluru, India</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="#work">see my work ↓</a>
+      <a class="btn" href="https://github.com/thirthpatel2-web" target="_blank" rel="noopener">github ↗</a>
+    </div>
+  </div>
+  <div class="scroll">scroll</div>
+</header>
+
+<section id="about">
+  <div class="eyebrow reveal">// 01 — ABOUT</div>
+  <h2 class="reveal">I build AI that has to work in the real world.</h2>
+  <div class="about">
+    <div class="reveal">
+      <p>I'm a 3rd-year Information Science &amp; Engineering student specialising in <b>AI &amp; Robotics</b> at Presidency University, Bengaluru.</p>
+      <p>I like projects where AI meets messy reality: government systems that don't talk to each other, roads full of potholes, résumés that need honest feedback, and chatbots that must know when to hand over to a human.</p>
+      <p>My stack is mostly <b>Python</b> (FastAPI, Flask, scikit-learn, OpenCV) and <b>JavaScript</b> (React, Node), with LLMs and retrieval where they actually help.</p>
+    </div>
+    <div class="term reveal">
+      <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+<pre><span class="k">const</span> thirth = {
+  studies:  <span class="s">"ISE — AI &amp; Robotics"</span>,
+  at:       <span class="s">"Presidency University"</span>,
+  based:    <span class="s">"Bengaluru, India"</span>,
+  builds:   [<span class="s">"LLM + RAG"</span>, <span class="s">"computer vision"</span>,
+             <span class="s">"full-stack apps"</span>, <span class="s">"AI agents"</span>],
+  rule:     <span class="s">"ship it, test it, be honest about it"</span>,
+};
+<span class="c">// currently →</span> <span class="g">building, learning, shipping</span></pre>
+    </div>
+  </div>
+  <div class="stats reveal" id="stats">
+    <div class="stat"><b data-k="repos">10</b><span>public projects</span></div>
+    <div class="stat"><b data-k="langs">9</b><span>languages used</span></div>
+    <div class="stat"><b data-k="since">2025</b><span>on GitHub since</span></div>
+    <div class="stat"><b data-k="latest">—</b><span>latest push</span></div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section id="work">
+  <div class="eyebrow reveal">// 02 — SELECTED WORK</div>
+  <h2 class="reveal">Things I've built</h2>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="eyebrow reveal">// 03 — CONTACT</div>
+  <h2 class="reveal">Let's build something useful.</h2>
+  <div class="links reveal">
+    <a class="btn primary" href="mailto:thirthpatel2@gmail.com">thirthpatel2@gmail.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/thirth-p-a23aa0339" target="_blank" rel="noopener">linkedin ↗</a>
+    <a class="btn" href="https://github.com/thirthpatel2-web" target="_blank" rel="noopener">github ↗</a>
+  </div>
+</section>
+
+<footer>designed &amp; built by Thirth Patel · three.js + plain HTML/CSS/JS · no frameworks harmed</footer>
+
+<script>
+  // ---------- projects
+  const P = [
+    ["🏛️","CivicLens","interoperability gateway · govtech","Lets government departments securely reuse each other's verified data with the citizen's consent — plus a citizen app for complaints, RTI and AI legal help.",["FastAPI","PostgreSQL","LLM + RAG","727 tests"],"#58a6ff","Civiclens"],
+    ["🚨","Cascade Failure Env","AI agents · distributed systems","An OpenEnv benchmark where AI agents play on-call engineer: detect, diagnose and recover cascading failures across 12 services.",["Python","AI agents","Docker"],"#ff7b72","cascade-failure-env"],
+    ["🌪️","IRIS","disaster intelligence","Command-centre dashboard for Indian cities: multi-hazard risk, early warning, evacuation and resource plans, live map, AI analyst.",["FastAPI","WebSockets","Leaflet"],"#3fb950","disaster-intel"],
+    ["🛣️","RoadScan AI","computer vision","Upload a road photo — potholes detected, damage measured, road graded. OpenCV pipeline with an optional deep-learning model.",["OpenCV","Flask","TensorFlow"],"#ffa657","Road_scan_AI-"],
+    ["📡","Signal","explainable ML · careers","Matches a résumé against 25 job roles with TF-IDF + cosine similarity, shows the skill gap and a fully explainable score.",["scikit-learn","NLP","Flask"],"#d2a8ff","AI-Resume_Analyser"],
+    ["🧠","EthicaMind","responsible AI · wellness","A wellness companion that screens every message for crisis language before the AI answers, with Indian helplines built in.",["Gemini","Flask","React"],"#ff7eb6","EthicaMind"],
+    ["🎯","SkillSense","ML career recommender","Predicts a résumé's career track with TF-IDF + logistic regression, extracts skills and suggests what to learn next.",["scikit-learn","Flask"],"#79c0ff","Skillsense"],
+    ["🛡️","DisasterShield AI","React console","A disaster-response console: risk prediction, scenario simulation, SOS alerts, casualty estimates and a Groq analyst.",["React","Vite","Groq"],"#56d4dd","disastershield-ai"],
+    ["💼","JobConnect","full-stack web","Job portal with seeker/employer roles, JWT auth, search filters and application tracking.",["Node.js","Express","JWT"],"#e3b341","job-listing-portal"],
+  ];
+  const grid = document.getElementById("grid");
+  grid.innerHTML = P.map(([e,t,tag,d,chips,c,repo]) => `
+    <a class="card reveal" style="--c:${c}" href="https://github.com/thirthpatel2-web/${repo}" target="_blank" rel="noopener">
+      <span class="go">view ↗</span>
+      <div class="emoji">${e}</div><h3>${t}</h3><div class="tag">${tag}</div>
+      <p>${d}</p><div class="chips">${chips.map(x => `<span class="chip">${x}</span>`).join("")}</div>
+    </a>`).join("");
+
+  // ---------- tilt + spotlight
+  const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (fine && !still) document.querySelectorAll(".card").forEach(c => {
+    c.addEventListener("mousemove", e => {
+      const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      c.style.setProperty("--mx", x * 100 + "%"); c.style.setProperty("--my", y * 100 + "%");
+      c.style.transform = `rotateX(${(0.5 - y) * 14}deg) rotateY(${(x - 0.5) * 14}deg) translateZ(0)`;
+    });
+    c.addEventListener("mouseleave", () => { c.style.transform = ""; });
+  });
+
+  // ---------- cursor glow
+  const glow = document.getElementById("glow");
+  if (fine && !still) addEventListener("mousemove", e => { glow.style.left = e.clientX + "px"; glow.style.top = e.clientY + "px"; });
+
+  // ---------- typing roles
+  const roles = ["AI & Robotics engineer in the making", "LLM + RAG systems that cite their sources", "computer vision for real roads", "full-stack: Python · FastAPI · React", "AI agents that fix broken systems"];
+  const roleEl = document.getElementById("role");
+  (async () => {
+    if (still) { roleEl.textContent = roles[0]; return; }
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
+    for (let i = 0; ; i = (i + 1) % roles.length) {
+      for (const ch of roles[i]) { roleEl.textContent += ch; await sleep(38); }
+      await sleep(1500);
+      while (roleEl.textContent) { roleEl.textContent = roleEl.textContent.slice(0, -1); await sleep(16); }
+      await sleep(250);
+    }
+  })();
+
+  // ---------- marquee
+  const tech = ["Python","FastAPI","Flask","PostgreSQL","Redis","scikit-learn","OpenCV","TensorFlow","LLMs","RAG","Groq","Gemini","React","Node.js","Express","MongoDB","Docker","GitHub Actions","WebSockets","Leaflet"];
+  document.getElementById("track").innerHTML = [...tech, ...tech].map(t => `<span>✦ ${t}</span>`).join("");
+
+  // ---------- reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll(".reveal").forEach((el, i) => { el.style.transitionDelay = (i % 3) * 90 + "ms"; io.observe(el); });
+
+  // ---------- live stats (public GitHub API; falls back to the values in the HTML)
+  (async () => {
+    try {
+      const u = "thirthpatel2-web";
+      const repos = (await (await fetch(`https://api.github.com/users/${u}/repos?per_page=100&type=owner`)).json())
+        .filter(r => !r.fork && r.name.toLowerCase() !== u && !r.name.endsWith(".github.io"));
+      const langs = new Set(repos.map(r => r.language).filter(Boolean));
+      const latest = repos.sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))[0];
+      const set = (k, v) => document.querySelector(`[data-k="${k}"]`).textContent = v;
+      set("repos", repos.length);
+      set("langs", langs.size);
+      if (latest) set("latest", new Date(latest.pushed_at).toLocaleDateString("en-IN", { day: "numeric", month: "short" }));
+    } catch (_) { /* keep static fallback */ }
+  })();
+</script>
+
+<script type="module">
+  import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js";
+  const canvas = document.getElementById("scene");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x05060f, 0.055);
+  const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+  camera.position.set(0, 0, 9);
+
+  // wireframe core + inner solid glow
+  const group = new THREE.Group(); scene.add(group);
+  const geo = new THREE.IcosahedronGeometry(2.6, 1);
+  const wire = new THREE.LineSegments(new THREE.WireframeGeometry(geo), new THREE.LineBasicMaterial({ color: 0x8f7cff, transparent: true, opacity: .55 }));
+  group.add(wire);
+  const dots = new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xff7eb6, size: .09 }));
+  group.add(dots);
+  const outer = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.IcosahedronGeometry(3.6, 0)), new THREE.LineBasicMaterial({ color: 0x58a6ff, transparent: true, opacity: .18 }));
+  group.add(outer);
+
+  // particle field
+  const N = 1400, pos = new Float32Array(N * 3);
+  for (let i = 0; i < N; i++) { const r = 6 + Math.random() * 18, t = Math.random() * Math.PI * 2, p = Math.acos(2 * Math.random() - 1);
+    pos.set([r * Math.sin(p) * Math.cos(t), r * Math.sin(p) * Math.sin(t), r * Math.cos(p)], i * 3); }
+  const pg = new THREE.BufferGeometry(); pg.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+  const field = new THREE.Points(pg, new THREE.PointsMaterial({ color: 0x9fb3ff, size: .045, transparent: true, opacity: .8 }));
+  scene.add(field);
+
+  function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+    group.position.x = w > 900 ? 0 : 0; group.scale.setScalar(w < 620 ? .7 : 1); }
+  addEventListener("resize", resize); resize();
+
+  let mx = 0, my = 0;
+  addEventListener("mousemove", e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; });
+  const clock = new THREE.Clock();
+  function tick() {
+    const t = clock.getElapsedTime();
+    group.rotation.y = t * .18 + mx * .8; group.rotation.x = t * .07 + my * .6;
+    outer.rotation.y = -t * .1;
+    field.rotation.y = t * .02; field.rotation.x = my * .15;
+    const s = 1 + Math.sin(t * 1.4) * .025; wire.scale.setScalar(s);
+    camera.position.y = -scrollY * .002;
+    renderer.render(scene, camera);
+    if (!still) requestAnimationFrame(tick);
+  }
+  tick();
+</script>
+</body>
+</html>
