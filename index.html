@@ -49,6 +49,10 @@
   .role .caret { display: inline-block; width: 10px; height: 1.1em; background: var(--blue); vertical-align: -3px; margin-left: 3px; animation: blink 1s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
   .where { margin-top: 26px; display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .pill.open { color: var(--green); border-color: rgba(63,185,80,.45); }
+  .live { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+  .live .btn { display: inline-flex; gap: 10px; align-items: center; }
+  .live .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); animation: blink 1.6s ease-in-out infinite; }
   .pill { font-family: var(--mono); font-size: 12.5px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,17,23,.6); color: var(--muted); }
   .cta { margin-top: 34px; display: flex; gap: 14px; justify-content: center; pointer-events: auto; flex-wrap: wrap; }
   .btn { font-family: var(--mono); font-size: 14px; padding: 13px 22px; border-radius: 12px; border: 1px solid var(--line); transition: .25s; }
@@ -132,6 +136,7 @@
       <span class="pill">🤖 ISE · AI &amp; Robotics</span>
       <span class="pill">🎓 Presidency University</span>
       <span class="pill">📍 Bengaluru, India</span>
+      <span class="pill open">🟢 open to internships</span>
     </div>
     <div class="cta">
       <a class="btn primary" href="#work">see my work ↓</a>
@@ -168,6 +173,10 @@
     <div class="stat"><b data-k="langs">9</b><span>languages used</span></div>
     <div class="stat"><b data-k="since">2025</b><span>on GitHub since</span></div>
     <div class="stat"><b data-k="latest">—</b><span>latest push</span></div>
+  </div>
+  <div class="live reveal">
+    <a class="btn" href="https://huggingface.co/spaces/ThirthPatel/cascade-failure-env" target="_blank" rel="noopener"><span class="dot"></span>live · AI-agent benchmark on Hugging Face ↗</a>
+    <a class="btn" href="https://thirthpatel2-web.github.io/disastershield-ai/" target="_blank" rel="noopener"><span class="dot"></span>live · DisasterShield AI demo ↗</a>
   </div>
 </section>
 
