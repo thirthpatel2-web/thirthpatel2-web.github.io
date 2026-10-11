@@ -3,10 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Thirth Patel · AI & Robotics · Developer</title>
-<meta name="description" content="Thirth Patel — ISE (AI & Robotics) at Presidency University, Bengaluru. Applied AI, LLM + RAG systems, computer vision and full-stack projects." />
-<meta property="og:title" content="Thirth Patel · AI & Robotics · Developer" />
-<meta property="og:description" content="Applied AI, LLM + RAG systems, computer vision and full-stack projects." />
+<title>Thirth Patel · AI/ML & Full-Stack Software Engineer</title>
+<meta name="description" content="Thirth Patel — B.Tech ISE (AI & Robotics) at Presidency University, Bengaluru. AI/ML, LLM + RAG, AI agents, computer vision, FastAPI and full-stack engineering. SIH 2026 team lead. Open to SDE and AI/ML internships." />
+<meta name="keywords" content="Thirth Patel, software engineer, AI ML engineer, LLM, RAG, AI agents, computer vision, FastAPI, Python, React, full-stack, Smart India Hackathon, Presidency University, Bengaluru, internship" />
+<meta name="author" content="Thirth Patel" />
+<link rel="canonical" href="https://thirthpatel2-web.github.io/" />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://thirthpatel2-web.github.io/" />
+<meta property="og:title" content="Thirth Patel · AI/ML & Full-Stack Software Engineer" />
+<meta property="og:description" content="SIH 2026 team lead. CivicLens: 768 tests, 187 APIs, LLM + RAG over 38,238 judgments. AI agents, computer vision, full-stack." />
+<meta property="og:image" content="https://img.youtube.com/vi/tzFOb6MYcbs/maxresdefault.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Thirth Patel","url":"https://thirthpatel2-web.github.io/",
+ "jobTitle":"AI/ML & Full-Stack Software Engineer (student)","email":"mailto:thirthpatel2@gmail.com",
+ "address":{"@type":"PostalAddress","addressLocality":"Bengaluru","addressCountry":"IN"},
+ "alumniOf":{"@type":"CollegeOrUniversity","name":"Presidency University, Bengaluru"},
+ "knowsAbout":["Machine Learning","Large Language Models","Retrieval-Augmented Generation","AI Agents","Computer Vision","FastAPI","PostgreSQL","React","Docker"],
+ "sameAs":["https://github.com/thirthpatel2-web","https://www.linkedin.com/in/thirth-p-a23aa0339","https://huggingface.co/ThirthPatel"]}
+</script>
 <meta name="theme-color" content="#05060f" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧊</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -114,7 +129,59 @@
   .links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   footer { text-align: center; padding: 40px 20px 60px; font-family: var(--mono); font-size: 12px; color: var(--muted); position: relative; z-index: 1; }
 
+  /* case study */
+  .case { display: grid; grid-template-columns: 1.25fr 1fr; gap: 30px; align-items: center; }
+  .video { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); cursor: pointer;
+           background: #000 center/cover no-repeat; box-shadow: 0 30px 80px -30px rgba(88,166,255,.45); }
+  .video::after { content: "▶"; position: absolute; inset: 0; margin: auto; width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center;
+                  font-size: 28px; color: #05060f; background: linear-gradient(135deg, var(--blue), var(--purple)); box-shadow: 0 0 0 10px rgba(188,140,255,.18); transition: .25s; padding-left: 5px; }
+  .video:hover::after { transform: scale(1.08); }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video.playing::after { display: none; }
+  .case h3 { font-size: 30px; margin-bottom: 6px; }
+  .case p { color: #c9d1d9; margin-bottom: 18px; }
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 18px; }
+  .metric { border: 1px solid var(--line); border-radius: 14px; padding: 12px; background: var(--panel); }
+  .metric b { display: block; font-size: 24px; line-height: 1.1; background: linear-gradient(90deg, var(--blue), var(--purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .metric span { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+
+  /* journey timeline */
+  .tl { position: relative; margin-left: 12px; padding-left: 34px; }
+  .tl::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--blue), var(--purple), var(--pink)); border-radius: 2px; }
+  .ev { position: relative; padding: 0 0 30px; }
+  .ev::before { content: ""; position: absolute; left: -41px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--c, var(--blue)); box-shadow: 0 0 16px var(--c, var(--blue)); }
+  .ev .when { font-family: var(--mono); font-size: 12.5px; color: var(--c, var(--blue)); }
+  .ev h3 { font-size: 21px; margin: 2px 0 4px; }
+  .ev .org { color: var(--muted); font-size: 15px; }
+  .ev ul { margin: 8px 0 0 18px; color: #c9d1d9; font-size: 15.5px; }
+  .ev li { margin-bottom: 4px; }
+  .ev .kind { font-family: var(--mono); font-size: 11px; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); margin-left: 8px; vertical-align: 3px; }
+
+  /* resume */
+  .resume { display: grid; grid-template-columns: 1fr 1.1fr; gap: 34px; align-items: center; }
+  .paper { background: #fff; border-radius: 14px; aspect-ratio: 210/297; overflow: hidden; box-shadow: 0 40px 100px -30px rgba(188,140,255,.5); transform: rotate(-2.5deg); transition: .4s; border: 1px solid #ddd; }
+  .paper:hover { transform: rotate(0) scale(1.02); }
+  .paper img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .resume p { color: #c9d1d9; font-size: 17px; margin-bottom: 18px; }
+  .checks { list-style: none; margin: 0 0 24px; font-family: var(--mono); font-size: 13.5px; color: #c9d1d9; }
+  .checks li { margin-bottom: 7px; } .checks li::before { content: "✓ "; color: var(--green); }
+
+  /* terminal palette */
+  .kbd { font-family: var(--mono); font-size: 11px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px; padding: 1px 6px; color: var(--muted); }
+  #termbtn { cursor: pointer; }
+  #shell { position: fixed; inset: 0; z-index: 50; display: none; place-items: center; background: rgba(2,3,8,.6); backdrop-filter: blur(6px); }
+  #shell.open { display: grid; }
+  #shell .term { width: min(760px, 94vw); height: min(480px, 76vh); display: flex; flex-direction: column; }
+  #out { flex: 1; overflow-y: auto; padding: 16px 18px 6px; font-family: var(--mono); font-size: 13.5px; line-height: 1.65; white-space: pre-wrap; color: #c9d1d9; }
+  #out a { color: var(--blue); text-decoration: underline; }
+  .inrow { display: flex; gap: 8px; align-items: center; padding: 8px 18px 16px; font-family: var(--mono); font-size: 14px; }
+  .inrow .p { color: var(--green); white-space: nowrap; }
+  #cmd { flex: 1; background: transparent; border: 0; outline: 0; color: var(--text); font: inherit; caret-color: var(--blue); }
+
+  @media (max-width: 900px) { .case, .resume { grid-template-columns: 1fr; } .paper { max-width: 380px; margin: 0 auto; } }
   @media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } .about { grid-template-columns: 1fr; } .stats { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { nav { max-width: calc(100vw - 20px); } nav a[href="#hero"], nav a[href="#about"], nav a[href="#contact"] { display: none; }
+                              .metrics { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 620px) { .role { min-height: 3.3em; } .grid { grid-template-columns: 1fr; } nav a { padding: 7px 10px; font-size: 12px; } section { padding: 80px 18px; } }
   @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
 </style>
@@ -123,7 +190,7 @@
 <div id="glow"></div>
 
 <nav>
-  <a href="#hero">~/home</a><a href="#about">about</a><a href="#work">work</a><a href="#contact">contact</a>
+  <a href="#hero">~/home</a><a href="#about">about</a><a href="#journey">journey</a><a href="#work">work</a><a href="#resume">resume</a><a href="#contact">contact</a><a id="termbtn" title="Open the terminal (press /)">&gt;_</a>
 </nav>
 
 <header id="hero">
@@ -140,8 +207,10 @@
     </div>
     <div class="cta">
       <a class="btn primary" href="#work">see my work ↓</a>
+      <a class="btn" href="Thirth_Patel_Resume.pdf" target="_blank" rel="noopener">résumé (pdf) ↗</a>
       <a class="btn" href="https://github.com/thirthpatel2-web" target="_blank" rel="noopener">github ↗</a>
     </div>
+    <div style="margin-top:22px;font-family:var(--mono);font-size:12px;color:var(--muted)">psst — press <span class="kbd">/</span> or tap <span class="kbd">&gt;_</span> for a terminal</div>
   </div>
   <div class="scroll">scroll</div>
 </header>
@@ -151,9 +220,9 @@
   <h2 class="reveal">I build AI that has to work in the real world.</h2>
   <div class="about">
     <div class="reveal">
-      <p>I'm a 3rd-year Information Science &amp; Engineering student specialising in <b>AI &amp; Robotics</b> at Presidency University, Bengaluru.</p>
+      <p>I'm a 3rd-year Information Science &amp; Engineering student specialising in <b>AI &amp; Robotics</b> at Presidency University, Bengaluru (CGPA 8.82), and I led my team at <b>Smart India Hackathon 2026</b>.</p>
       <p>I like projects where AI meets messy reality: government systems that don't talk to each other, roads full of potholes, résumés that need honest feedback, and chatbots that must know when to hand over to a human.</p>
-      <p>My stack is mostly <b>Python</b> (FastAPI, Flask, scikit-learn, OpenCV) and <b>JavaScript</b> (React, Node), with LLMs and retrieval where they actually help.</p>
+      <p>My stack is mostly <b>Python</b> (FastAPI, Flask, scikit-learn, OpenCV) and <b>JavaScript</b> (React, Node), with LLMs, RAG and agents where they actually help. Two industry internships taught me the other half: reading someone else's production code and changing it safely.</p>
     </div>
     <div class="term reveal">
       <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
@@ -169,10 +238,10 @@
     </div>
   </div>
   <div class="stats reveal" id="stats">
-    <div class="stat"><b data-k="repos">10</b><span>public projects</span></div>
-    <div class="stat"><b data-k="langs">9</b><span>languages used</span></div>
-    <div class="stat"><b data-k="since">2025</b><span>on GitHub since</span></div>
-    <div class="stat"><b data-k="latest">—</b><span>latest push</span></div>
+    <div class="stat"><b data-count="768">768</b><span>automated tests · CivicLens CI</span></div>
+    <div class="stat"><b data-count="187">187</b><span>REST API operations shipped</span></div>
+    <div class="stat"><b data-count="38238">38,238</b><span>court judgments in a RAG index</span></div>
+    <div class="stat"><b data-k="repos">11</b><span>public projects · last push <span data-k="latest">—</span></span></div>
   </div>
   <div class="live reveal">
     <a class="btn" href="https://huggingface.co/spaces/ThirthPatel/cascade-failure-env" target="_blank" rel="noopener"><span class="dot"></span>live · AI-agent benchmark on Hugging Face ↗</a>
@@ -182,14 +251,102 @@
 
 <div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
 
+<section id="journey">
+  <div class="eyebrow reveal">// 02 — JOURNEY</div>
+  <h2 class="reveal">Where I've shipped</h2>
+  <div class="tl">
+    <div class="ev reveal" style="--c:var(--pink)">
+      <div class="when">Sep 2026 · Smart India Hackathon 2026</div>
+      <h3>Team Lead — CivicLens <span class="kind">hackathon</span></h3>
+      <div class="org">Top 142 teams, Presidency University internal round · problem statement SIH26129</div>
+      <ul>
+        <li>Led the team building a consent-first gateway that lets government departments reuse each other's verified data.</li>
+        <li>187 REST operations, 50 screens, 10 languages, RAG over 38,238 judgments, 768 automated tests in CI.</li>
+      </ul>
+    </div>
+    <div class="ev reveal" style="--c:var(--blue)">
+      <div class="when">Jul 2026 – Sep 2026</div>
+      <h3>Full-Stack Web Development Intern <span class="kind">internship</span></h3>
+      <div class="org">Technofenatics Solutions LLP (Sattix) · Bengaluru</div>
+      <ul>
+        <li>Shipped features to a live PHP + SQLite platform through ticket-based, stand-up driven work.</li>
+        <li>Made community links admin-configurable with no code deploy or database migration; fixed caching-related UI bugs with cache busting.</li>
+      </ul>
+    </div>
+    <div class="ev reveal" style="--c:var(--orange)">
+      <div class="when">2026 · Hackathons</div>
+      <h3>Meta × Hugging Face OpenEnv · FusionX 2026 · Hack Devengers 2.0 <span class="kind">hackathons</span></h3>
+      <div class="org">Built Cascade Failure Env (AI-agent benchmark, live on HF) and IRIS (disaster intelligence)</div>
+    </div>
+    <div class="ev reveal" style="--c:var(--green)">
+      <div class="when">Jan 2026 – Feb 2026</div>
+      <h3>Web Development Intern <span class="kind">internship</span></h3>
+      <div class="org">Amdox Technologies · Remote</div>
+      <ul><li>Built JobConnect: Node.js + Express job portal with JWT auth, role-based access and a 5-stage hiring pipeline.</li></ul>
+    </div>
+    <div class="ev reveal" style="--c:var(--purple)">
+      <div class="when">2024 – 2028</div>
+      <h3>B.Tech, Information Science &amp; Engineering <span class="kind">education</span></h3>
+      <div class="org">Presidency University, Bengaluru · AI &amp; Robotics · CGPA 8.82</div>
+    </div>
+  </div>
+</section>
+
+<section id="featured">
+  <div class="eyebrow reveal">// 03 — FEATURED</div>
+  <h2 class="reveal">CivicLens, in 6 minutes 46 seconds</h2>
+  <div class="case">
+    <div class="video reveal" id="video" role="button" tabindex="0" aria-label="Play the CivicLens demo video"
+         style="background-image:url('https://img.youtube.com/vi/tzFOb6MYcbs/maxresdefault.jpg')"></div>
+    <div class="reveal">
+      <h3>One citizen. One consent click.</h3>
+      <p>Government departments re-verify the same certificates again and again because their systems can't talk. CivicLens resolves identity, checks consent, fetches the verified record, validates it, transforms it and traces every hop — plus a citizen app for complaints, RTI, legal help and voice.</p>
+      <div class="metrics">
+        <div class="metric"><b>768</b><span>tests passing</span></div>
+        <div class="metric"><b>187</b><span>API operations</span></div>
+        <div class="metric"><b>50</b><span>web screens</span></div>
+        <div class="metric"><b>38,238</b><span>judgments indexed</span></div>
+        <div class="metric"><b>10</b><span>languages</span></div>
+        <div class="metric"><b>31/34</b><span>spec capabilities</span></div>
+      </div>
+      <div class="chips" style="--c:var(--blue)">
+        <span class="chip">FastAPI</span><span class="chip">PostgreSQL + pgvector</span><span class="chip">Redis</span><span class="chip">LLM + RAG</span><span class="chip">Whisper</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span>
+      </div>
+      <div class="cta" style="justify-content:flex-start;margin-top:22px">
+        <a class="btn primary" href="https://github.com/thirthpatel2-web/Civiclens" target="_blank" rel="noopener">read the code ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="work">
-  <div class="eyebrow reveal">// 02 — SELECTED WORK</div>
+  <div class="eyebrow reveal">// 04 — SELECTED WORK</div>
   <h2 class="reveal">Things I've built</h2>
   <div class="grid" id="grid"></div>
 </section>
 
+<section id="resume">
+  <div class="eyebrow reveal">// 05 — RÉSUMÉ</div>
+  <h2 class="reveal">One page. Every claim checkable.</h2>
+  <div class="resume">
+    <a class="paper reveal" href="Thirth_Patel_Resume.pdf" target="_blank" rel="noopener"><img src="resume-preview.png" alt="Preview of Thirth Patel's one-page résumé" loading="lazy"></a>
+    <div class="reveal">
+      <p>Every number on it links back to code you can open: tests, APIs, benchmarks, live demos.</p>
+      <ul class="checks">
+        <li>ATS-friendly single column, real text</li>
+        <li>2 industry internships · SIH 2026 team lead</li>
+        <li>AI/ML · backend · full-stack keywords, all backed by projects</li>
+      </ul>
+      <div class="links" style="justify-content:flex-start">
+        <a class="btn primary" href="Thirth_Patel_Resume.pdf" target="_blank" rel="noopener">download pdf ↓</a>
+        <a class="btn" href="Thirth_Patel_Resume.docx">docx ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="contact">
-  <div class="eyebrow reveal">// 03 — CONTACT</div>
+  <div class="eyebrow reveal">// 06 — CONTACT</div>
   <h2 class="reveal">Let's build something useful.</h2>
   <div class="links reveal">
     <a class="btn primary" href="mailto:thirthpatel2@gmail.com">thirthpatel2@gmail.com</a>
@@ -198,12 +355,20 @@
   </div>
 </section>
 
-<footer>designed &amp; built by Thirth Patel · three.js + plain HTML/CSS/JS · no frameworks harmed</footer>
+<footer>designed &amp; built by Thirth Patel · three.js + plain HTML/CSS/JS · no frameworks harmed · press <span class="kbd">/</span></footer>
+
+<div id="shell" role="dialog" aria-modal="true" aria-label="Terminal">
+  <div class="term">
+    <div class="bar"><i style="background:#ff5f57;cursor:pointer" id="shellx" title="close"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+    <div id="out"></div>
+    <div class="inrow"><span class="p">thirth@portfolio:~$</span><input id="cmd" autocomplete="off" spellcheck="false" aria-label="command"></div>
+  </div>
+</div>
 
 <script>
   // ---------- projects
   const P = [
-    ["🏛️","CivicLens","interoperability gateway · govtech","Lets government departments securely reuse each other's verified data with the citizen's consent — plus a citizen app for complaints, RTI and AI legal help.",["FastAPI","PostgreSQL","LLM + RAG","727 tests"],"#58a6ff","Civiclens"],
+    ["🏛️","CivicLens","interoperability gateway · govtech","Lets government departments securely reuse each other's verified data with the citizen's consent — plus a citizen app for complaints, RTI and AI legal help.",["FastAPI","PostgreSQL","LLM + RAG","768 tests"],"#58a6ff","Civiclens"],
     ["🚨","Cascade Failure Env","AI agents · distributed systems","An OpenEnv benchmark where AI agents play on-call engineer: detect, diagnose and recover cascading failures across 12 services.",["Python","AI agents","Docker"],"#ff7b72","cascade-failure-env"],
     ["🌪️","IRIS","disaster intelligence","Command-centre dashboard for Indian cities: multi-hazard risk, early warning, evacuation and resource plans, live map, AI analyst.",["FastAPI","WebSockets","Leaflet"],"#3fb950","disaster-intel"],
     ["🛣️","RoadScan AI","computer vision","Upload a road photo — potholes detected, damage measured, road graded. OpenCV pipeline with an optional deep-learning model.",["OpenCV","Flask","TensorFlow"],"#ffa657","Road_scan_AI-"],
@@ -267,12 +432,109 @@
         .filter(r => !r.fork && r.name.toLowerCase() !== u && !r.name.endsWith(".github.io"));
       const langs = new Set(repos.map(r => r.language).filter(Boolean));
       const latest = repos.sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))[0];
-      const set = (k, v) => document.querySelector(`[data-k="${k}"]`).textContent = v;
+      const set = (k, v) => { const el = document.querySelector(`[data-k="${k}"]`); if (el) el.textContent = v; };
       set("repos", repos.length);
-      set("langs", langs.size);
       if (latest) set("latest", new Date(latest.pushed_at).toLocaleDateString("en-IN", { day: "numeric", month: "short" }));
     } catch (_) { /* keep static fallback */ }
   })();
+
+  // ---------- demo video: load YouTube only when asked (keeps the page fast)
+  const video = document.getElementById("video");
+  const play = () => {
+    if (video.classList.contains("playing")) return;
+    video.classList.add("playing");
+    video.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/tzFOb6MYcbs?autoplay=1&rel=0" title="CivicLens demo" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+  };
+  video.addEventListener("click", play);
+  video.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); play(); } });
+
+  // ---------- count-up numbers
+  const fmt = n => n.toLocaleString("en-IN");
+  const cio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; cio.unobserve(e.target);
+    const el = e.target, end = +el.dataset.count;
+    if (still) { el.textContent = fmt(end); return; }
+    const t0 = performance.now(), dur = 1400;
+    const step = now => { const k = Math.min(1, (now - t0) / dur); el.textContent = fmt(Math.round(end * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }), { threshold: .6 });
+  document.querySelectorAll("[data-count]").forEach(el => cio.observe(el));
+
+  // ---------- terminal: press "/" anywhere
+  const shell = document.getElementById("shell"), out = document.getElementById("out"), cmd = document.getElementById("cmd");
+  const esc = s => s.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]);
+  const link = (href, text) => `<a href="${href}" target="_blank" rel="noopener">${text}</a>`;
+  const gh = r => link(`https://github.com/thirthpatel2-web/${r}`, r);
+  const say = html => { out.innerHTML += html + "\n"; out.scrollTop = out.scrollHeight; };
+  const go = id => { close(); document.getElementById(id).scrollIntoView({ behavior: still ? "auto" : "smooth" }); };
+  const C = {
+    help: () => `commands:
+  whoami        who is this
+  projects      what I've built (with links)
+  experience    internships & hackathons
+  skills        the stack, honestly
+  resume        open the one-page résumé
+  contact       how to reach me
+  goto &lt;name&gt;   jump to: about · journey · featured · work · resume · contact
+  sudo hire-me  try it
+  clear · exit`,
+    whoami: () => `Thirth Patel — B.Tech ISE (AI &amp; Robotics), Presidency University, Bengaluru · CGPA 8.82
+SIH 2026 team lead · 2 industry internships · builds AI that has to work in the real world.`,
+    projects: () => [
+      ["Civiclens", "consent-first gov data gateway · 768 tests · 187 APIs · RAG"],
+      ["cascade-failure-env", "AI-agent SRE benchmark · Meta × HF OpenEnv"],
+      ["disaster-intel", "IRIS · multi-hazard risk + live alerts"],
+      ["Road_scan_AI-", "pothole detection with OpenCV / Keras"],
+      ["AI-Resume_Analyser", "Signal · explainable résumé ↔ job matching"],
+      ["EthicaMind", "wellness chat with a crisis-safety layer"],
+      ["job-listing-portal", "JobConnect · built at Amdox"],
+    ].map(([r, d]) => `  ${gh(r)}  — ${d}`).join("\n"),
+    experience: () => `  Jul–Sep 2026  Full-Stack Web Dev Intern · Technofenatics Solutions (Sattix)
+  Jan–Feb 2026  Web Development Intern · Amdox Technologies
+  Sep 2026      SIH 2026 · Team Lead · Top 142 (internal round)
+  2026          Meta × HF OpenEnv · FusionX 2026 · Hack Devengers 2.0`,
+    skills: () => `  ai/ml     LLMs · RAG · agents · NLP · computer vision · scikit-learn · TensorFlow · OpenCV
+  backend   Python · FastAPI · Flask · Node/Express · PostgreSQL · Redis · MongoDB · REST · WebSockets
+  frontend  React · Vite · NiceGUI · three.js
+  ops       Docker · GitHub Actions · pytest · Playwright · Linux`,
+    resume: () => { open("Thirth_Patel_Resume.pdf", "_blank"); return "opening résumé…"; },
+    contact: () => `  email    ${link("mailto:thirthpatel2@gmail.com", "thirthpatel2@gmail.com")}
+  linkedin ${link("https://www.linkedin.com/in/thirth-p-a23aa0339", "in/thirth-p-a23aa0339")}
+  github   ${link("https://github.com/thirthpatel2-web", "thirthpatel2-web")}`,
+    "sudo hire-me": () => `[sudo] password for recruiter: ********
+✓ permission granted. drafting email…`,
+    clear: () => { out.innerHTML = ""; return null; },
+    exit: () => { close(); return null; },
+  };
+  const run = raw => {
+    const line = raw.trim(); if (!line) return;
+    say(`<span style="color:var(--green)">thirth@portfolio:~$</span> ${esc(line)}`);
+    const low = line.toLowerCase();
+    if (low.startsWith("goto ") || low.startsWith("cd ")) {
+      const id = low.split(/\s+/)[1];
+      if (document.getElementById(id) && ["about","journey","featured","work","resume","contact"].includes(id)) return go(id);
+      return say(`no such section: ${esc(id || "")}`);
+    }
+    if (low === "sudo hire-me") { say(C[low]()); setTimeout(() => location.href = "mailto:thirthpatel2@gmail.com?subject=Internship%20opportunity", 900); return; }
+    const f = C[low]; const r = f ? f() : `command not found: ${esc(line)} — try "help"`;
+    if (r) say(r);
+  };
+  const openShell = () => { shell.classList.add("open"); if (!out.innerHTML) say(`Welcome. Type ${'"help"'} to look around.`); setTimeout(() => cmd.focus(), 30); };
+  const close = () => shell.classList.remove("open");
+  document.getElementById("termbtn").addEventListener("click", openShell);
+  document.getElementById("shellx").addEventListener("click", close);
+  shell.addEventListener("click", e => { if (e.target === shell) close(); });
+  addEventListener("keydown", e => {
+    if (e.key === "/" && !shell.classList.contains("open") && !/input|textarea/i.test(document.activeElement.tagName)) { e.preventDefault(); openShell(); }
+    else if (e.key === "Escape") close();
+  });
+  const hist = []; let hi = 0;
+  cmd.addEventListener("keydown", e => {
+    if (e.key === "Enter") { hist.push(cmd.value); hi = hist.length; run(cmd.value); cmd.value = ""; }
+    else if (e.key === "ArrowUp" && hi > 0) { cmd.value = hist[--hi]; e.preventDefault(); }
+    else if (e.key === "ArrowDown") { cmd.value = hi < hist.length - 1 ? hist[++hi] : (hi = hist.length, ""); }
+    else if (e.key === "Tab") { e.preventDefault(); const m = Object.keys(C).find(k => k.startsWith(cmd.value.toLowerCase())); if (m) cmd.value = m; }
+  });
 </script>
 
 <script type="module">
